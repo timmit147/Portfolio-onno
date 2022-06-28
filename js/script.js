@@ -31,21 +31,26 @@ function Sketchbook(){
     const slider = $("#myRange");
     const output = $("#demo");
     output.innerHTML = slider.value;
+    let zRotate = 0;
+    let xRotate = 0;
     slider.oninput = function() {
     output.innerHTML = this.value;
-    $(".sketch").style.transform = `rotateZ(${360/100*this.value}deg)`;
+    zRotate=this.value
+    $(".sketch").style.transform = `rotateZ(${360/100*zRotate}deg)rotateX(${360/100*xRotate}deg)`;
+
     }
     const slider2 = $("#myRange2");
     const output2 = $("#demo2");
     output2.innerHTML = slider2.value;
     slider2.oninput = function() {
     output2.innerHTML = this.value;
-    $(".sketch").style.transform = `rotateX(${360/100*this.value}deg)`;
+    xRotate=this.value
+    $(".sketch").style.transform = `rotateZ(${360/100*zRotate}deg)rotateX(${360/100*xRotate}deg)`;
     }
 
     i = 1;
     $(".next").onclick = function(){
-        if(i < 2){
+        if(i < 3){
             i++;
         }
         console.log("test");
@@ -61,34 +66,23 @@ function Sketchbook(){
 
     // zoom
     let zoom = 80;
+    let zoomTimes = 1;
     $(".zoom-in").onclick = function(){
-        zoom = zoom+10;
-        $(".sketch").style.backgroundSize = `${zoom}%`;
+        zoomTimes = zoomTimes*1.2;
+        $(".sketch").style.backgroundSize = `${zoom*zoomTimes}%`;
     };
     $(".zoom-out").onclick = function(){
-        zoom = zoom-10;
-        $(".sketch").style.backgroundSize = `${zoom}%`;
+        zoomTimes = zoomTimes/1.2;
+        $(".sketch").style.backgroundSize = `${zoom*zoomTimes}%`;
     };
 
-
-    // drag
-    // $(".sketch").onclick = function clickEvent(e) {
-    //     // e = Mouse click event.
-    //     var rect = e.target.getBoundingClientRect();
-    //     var x = e.clientX - rect.left; //x position within the element.
-    //     var y = e.clientY - rect.top;  //y position within the element.
-    //     console.log("Left? : " + x + " ; Top? : " + y + ".");
-    //   }
-
-    //   $(".sketch").on('mousemove', function(e) {
-    //     var element = $('.sketch');
-    //     console.log( element.offset() );
-    // });
     let isDrawing = false;
     let x = 0;
     let y = 0;
     let xStart = 0;
     let yStart = 0;
+    let xNew = 0;
+    let yNew = 0;
 
     $(".sketch").addEventListener('mousedown', e => {
         xStart = e.offsetX;
@@ -100,23 +94,15 @@ function Sketchbook(){
         if (isDrawing === true) {
             x = e.offsetX;
             y = e.offsetY;
-            console.log($(".sketch").offsetWidth);
-            if(xStart-x > 0){
-                $(".sketch").style.backgroundPositionX = `-${Math.abs((xStart-x))}px`;
-            }
-            else{
-                $(".sketch").style.backgroundPositionX = `${Math.abs(xStart-x)}px`;
-            }
-            // if(yStart-y > 0){
-            //     $(".sketch").style.backgroundPositionY = `-${Math.abs(xStart-y)}px`;
-            // }
-            // else{
-            //     $(".sketch").style.backgroundPositionY = `${Math.abs(xStart-y)}px`;
-            // }
+            $(".sketch").style.backgroundPositionX = `${(x-xStart)+xNew}px`;
+            $(".sketch").style.backgroundPositionY = `${(y-yStart)+yNew}px`;
         }
       });
       
       window.addEventListener('mouseup', e => {
+        xNew = xNew-(xStart-x);
+        yNew = yNew-(yStart-y);
+        xStart= xStart+x;
           isDrawing = false;
       });
 }

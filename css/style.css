@@ -144,8 +144,26 @@ nav a {
     background-repeat: no-repeat;
     background-image: url(../img/sketch-1.jpg);
     background-size: 80%;
-    background-position-x: 0px;
-    background-position-y: 0px;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    transform: rotateX(80deg);
+    transform-style: preserve-3d;
+}
+
+.test {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    background-color: black;
+    transform:rotateX(90deg)translatey(-20px)translatez(-320px);
+}
+
+.test2 {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    background-color: black;
+    transform:rotateX(90deg)translatey(-20px)translatez(30px)
 }
 
 .sketchbook .scale{
