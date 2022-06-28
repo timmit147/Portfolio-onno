@@ -3,12 +3,18 @@ body {
     margin: 0;
     font-family: monospace;
 }
+/* ---------------------------------------------------------------------------- */
+/* End general */
 
+
+
+/* ---------------------------------------------------------------------------- */
 /* Header */
 header {
     height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
+    display: none;
 }
 
 header .header-img {
@@ -112,4 +118,96 @@ nav a {
     100% {
         transform: rotate(0deg);
       }
-  }
+}
+/* ---------------------------------------------------------------------------- */
+/* End header */
+
+
+
+
+/* ---------------------------------------------------------------------------- */
+/* Sketchbook */
+.sketchbook {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sketchbook img{
+    width: 80vw;
+    border: 2px solid black;
+    /* animation: rotation-sketch 20s infinite linear; */
+}
+
+
+@keyframes rotation-sketch {
+    0% {
+      transform: rotate(0deg);
+      width: 80vw;
+    }
+    25% {
+        width: 90vh;
+    }
+    50% {
+        transform: rotate(180deg);
+        width: 80vw;
+    }
+    75% {
+        width: 90vh;
+    }
+    100% {
+        transform: rotate(360deg);
+        width: 80vw;
+    }
+}
+
+/* Slider */
+.slidecontainer {
+    width: 200px;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+}
+  
+.slider {
+-webkit-appearance: none;
+width: 100%;
+height: 25px;
+background: #d3d3d3;
+outline: none;
+opacity: 0.7;
+-webkit-transition: .2s;
+transition: opacity .2s;
+}
+
+.slider:hover {
+opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 25px;
+height: 25px;
+background: #04AA6D;
+cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+width: 25px;
+height: 25px;
+background: #04AA6D;
+cursor: pointer;
+}
+
+.slidecontainer2 {
+    width: 200px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* End sketchbook */
