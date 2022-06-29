@@ -14,11 +14,11 @@ header {
     height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
-    /* display: none; */
 }
 
 header .header-img {
     height: 100%;
+    object-fit: cover;
 }
 
 header h1{
@@ -119,6 +119,21 @@ nav a {
         transform: rotate(0deg);
       }
 }
+
+/* @media only screen and (max-width: 1200px) {
+    header{
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    header .header-img {
+        object-fit: contain;
+        height: 50%;
+    }
+    
+  } */
+
+
 /* ---------------------------------------------------------------------------- */
 /* End header */
 
@@ -130,16 +145,17 @@ nav a {
 .sketchbook {
     position: relative;
     display: flex;
-    height: 70vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     padding: 15vh 15vw;
+    box-sizing: border-box;
     background-color: #a7a7a7;
 }
 
 .sketchbook .sketch{
-    height: 30vw;
+    width: 80%;
     aspect-ratio: 3/2;
     transform-style: preserve-3d;
     transform: rotateZ(0deg) rotateX(40deg);
@@ -157,6 +173,15 @@ nav a {
     background-color: white;
     border-left: 3px solid #252525;
     transition: 2s all;
+    pointer-events: none;
+}
+
+.sketchbook .sketch > div > div{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    pointer-events: none;
+    transform: scaleX(-1);
 }
 
 .sketchbook .front{

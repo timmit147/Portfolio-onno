@@ -44,37 +44,24 @@ function Sketchbook(){
     // $(".sketch").style.transform = `rotateZ(${zRotate}deg)rotateX(${xRotate}deg)`;
     // }
 
-    i = 1;
-    changePage = "true";
+    i = -1;
     $(".next").onclick = function(){
-        if(changePage == "true"){
-            changePage = "false";
         if(i < 6){
+            i=i+2;
+            if($(`.page-${i}`)){
         $(`.page-${i}`).classList.add("rotate");
-        setTimeout(function () {
-        $(`.page-${i+1}`).classList.add("rotate");
-        i=i+2;
-       }, 0.001);
+       
         }
-        setTimeout(function () {
-            changePage = "true";
-           }, 2000);
     }
 
     };
     $(".previous").onclick = function(){
-        if(changePage == "true"){
-            changePage = "false";
+        if(i > 0){
+        if($(`.page-${i}`)){
+        $(`.page-${i}`).classList.remove("rotate");
+        }
         i=i-2;
-        $(`.page-${i+1}`).classList.remove("rotate");
-            setTimeout(function () {
-                $(`.page-${i}`).classList.remove("rotate");
-           }, 0.001);
-           setTimeout(function () {
-            changePage = "true";
-           }, 2000);
     }
-
     };
 
 
