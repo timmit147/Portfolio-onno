@@ -48,19 +48,19 @@ function Sketchbook(){
     $(".sketch").style.transform = `rotateZ(${360/100*zRotate}deg)rotateX(${360/100*xRotate}deg)`;
     }
 
-    i = 1;
+    i = 0;
     $(".next").onclick = function(){
         if(i < 3){
             i++;
         }
-        console.log("test");
-        $(".sketch").style.backgroundImage = `url('img/sketch-${i}.jpg')`;
+        $(`.sketch-${i} .page-2`).classList.add("rotate");
+
     };
     $(".previous").onclick = function(){
         if(i > 1){
             i--;
         }
-        $(".sketch").style.backgroundImage = `url('img/sketch-${i}.jpg')`;
+        $(`.sketch-${i} .page-2`).classList.remove("rotate");
     };
 
 
@@ -105,6 +105,7 @@ function Sketchbook(){
         xStart= xStart+x;
           isDrawing = false;
       });
+
 }
 
 Sketchbook()    
