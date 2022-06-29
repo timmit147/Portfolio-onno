@@ -143,7 +143,88 @@ nav a {
     transform-style: preserve-3d;
 }
 
-.sketchbook .sketch > div > div{
+.sketchbook .sketch > div{
+    width: 50%; 
+    height: 100%;
+    position: absolute;
+    right: 0;
+    transform-style: preserve-3d;
+    transform-origin: center left;  
+    background-size: 95%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    border-left: 5px solid;
+    border-top: 5px solid;
+    border-bottom: 5px solid;
+}
+
+.sketchbook .sketch .page-1{
+    background-image: url(../img/sketch-cover.jpg);
+    transform: translateZ(-1px);
+}
+
+
+.sketchbook .sketch .page-2{
+    background-image: url(../img/sketch-1.jpg);
+    transform: translateZ(-2px);
+}
+
+
+.sketchbook .sketch .page-3{
+    background-image: url(../img/sketch-2.jpg);
+    transform: translateZ(-2px);
+}
+
+
+.sketchbook .sketch .page-4{
+    background-image: url(../img/sketch-3.jpg);
+    transform: translateZ(-3px);
+}
+
+.sketchbook .sketch .page-5{
+    background-image: url(../img/sketch-4.jpg);
+    transform: translateZ(-3px);
+}
+
+
+.sketchbook .sketch .page-6{
+    background-image: url(../img/sketch-5.jpg);
+    transform: translateZ(-4px);
+}
+
+
+body .rotate{
+    animation: rotation-page 4s linear;
+    animation-fill-mode: forwards;
+}
+
+body .rotate-reverse {
+    animation: rotation-page 4s linear;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+
+@keyframes rotation-page {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(-180deg);
+    }
+}
+
+@keyframes rotation-page-reverse {
+    0% {
+        transform: rotateY(-180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+
+/* .sketchbook .sketch > div > div{
     width: 49%;
     height: 100%;
     background-repeat: no-repeat;
@@ -160,6 +241,10 @@ nav a {
     width: 100%;
 }
 
+.sketchbook .sketch-1 .page-1{
+    left: 0px;
+    right: inherit;
+}
 
 .sketch-1 >div {
     background-image: url(../img/sketch-1.jpg);
@@ -188,12 +273,12 @@ body .rotate{
         transform: rotateY(0deg);
     }
     100% {
-        transform: rotateY(-180deg);
+        transform: rotateY(-180deg)translateZ(-10px);
     }
 }
 
 .sketchbook .sketch > div .page-1{
-    left: 0;
+    right: 0;
     background-size: 200% 100%;
     background-position: 0%;
 }
@@ -226,7 +311,7 @@ body .rotate{
         transform: rotate(360deg);
         width: 80vw;
     }
-}
+} */
 
 /* Slider */
 .sketchbook .slidecontainer {

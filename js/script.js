@@ -48,19 +48,23 @@ function Sketchbook(){
     $(".sketch").style.transform = `rotateZ(${360/100*zRotate}deg)rotateX(${360/100*xRotate}deg)`;
     }
 
-    i = 0;
+    i = 1;
     $(".next").onclick = function(){
-        if(i < 3){
-            i++;
+        if(i < 6){
+        $(`.page-${i}`).classList.add("rotate");
+        setTimeout(function () {
+        $(`.page-${i+1}`).classList.add("rotate");
+        i=i+2;
+       }, 0.001);
         }
-        $(`.sketch-${i} .page-2`).classList.add("rotate");
 
     };
     $(".previous").onclick = function(){
-        if(i > 1){
-            i--;
-        }
-        $(`.sketch-${i} .page-2`).classList.remove("rotate");
+            $(`.page-${i}`).classList.remove("rotate");
+            setTimeout(function () {
+            $(`.page-${i+1}`).classList.remove("rotate");
+            i=i-2;
+           }, 0.001);
     };
 
 
