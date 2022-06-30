@@ -46,6 +46,10 @@ function Sketchbook(){
 
     i = -1;
     $(".next").onclick = function(){
+        if(i == -1){
+            $(`.next`).style.border = "unset";
+            console.log("test");
+        }
         if(i < 6){
             i=i+2;
             if($(`.page-${i}`)){

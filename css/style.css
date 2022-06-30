@@ -120,19 +120,6 @@ nav a {
       }
 }
 
-/* @media only screen and (max-width: 1200px) {
-    header{
-        display: flex;
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-    header .header-img {
-        object-fit: contain;
-        height: 50%;
-    }
-    
-  } */
-
 
 /* ---------------------------------------------------------------------------- */
 /* End header */
@@ -200,54 +187,54 @@ nav a {
 }
 
 
-.sketchbook .sketch .page-1{
+.sketchbook .sketch > div:nth-child(1){
     background-image: url(../img/sketch-cover.jpg);
     transform: translateZ(-1px);
     border-left: 5px solid #252525;
 }
 
 
-.sketchbook .sketch .page-2{
+.sketchbook .sketch > div:nth-child(1):after{
     background-image: url(../img/sketch-1.jpg);
     transform: translateZ(-2px);
 }
 
 
-.sketchbook .sketch .page-3{
+.sketchbook .sketch > div:nth-child(2){
     background-image: url(../img/sketch-2.jpg);
     transform: translateZ(-2px);
 }
 
 
-.sketchbook .sketch .page-4{
+.sketchbook .sketch > div:nth-child(2) > div{
     background-image: url(../img/sketch-3.jpg);
     transform: translateZ(-3px);
 }
 
-.sketchbook .sketch .page-5{
+.sketchbook .sketch > div:nth-child(3){
     background-image: url(../img/sketch-4.jpg);
     transform: translateZ(-3px);
 }
 
 
-.sketchbook .sketch .page-6{
+.sketchbook .sketch > div:nth-child(3) > div{
     background-image: url(../img/sketch-5.jpg);
     transform: translateZ(-4px);
 }
 
-.sketchbook .sketch .page-7{
-    background-image: url(../img/sketch-5.jpg);
-    transform: translateZ(-4px);
-}
-
-
-.sketchbook .sketch .page-8{
+.sketchbook .sketch > div:nth-child(4){
     background-image: url(../img/sketch-5.jpg);
     transform: translateZ(-4px);
 }
 
 
-.sketchbook .sketch .page-9{
+.sketchbook .sketch > div:nth-child(4) > div{
+    background-image: url(../img/sketch-5.jpg);
+    transform: translateZ(-4px);
+}
+
+
+.sketchbook .sketch > div:nth-child(5){
     background-image: url(../img/sketch-5.jpg);
     transform: translateZ(-4px);
 }
@@ -257,94 +244,6 @@ body .rotate{
 }
 
 
-/* .sketchbook .sketch > div > div{
-    width: 49%;
-    height: 100%;
-    background-repeat: no-repeat;
-    transform-style: preserve-3d;
-    position: absolute;
-    border: 5px solid;
-    background-color: white;
-}
-
-.sketchbook .sketch > div{
-    transform-style: preserve-3d;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-}
-
-.sketchbook .sketch-1 .page-1{
-    left: 0px;
-    right: inherit;
-}
-
-.sketch-1 >div {
-    background-image: url(../img/sketch-1.jpg);
-}
-
-
-.sketch-2 >div {
-    background-image: url(../img/sketch-2.jpg);
-    transform: translateZ(-1px);
-}
-
-
-.sketch-3 >div {
-    background-image: url(../img/sketch-3.jpg);
-    transform: translateZ(-2px);
-}
-
-body .rotate{
-    transform-origin: center left;
-    animation: rotation-page 4s linear;
-    animation-fill-mode: forwards;
-}
-
-@keyframes rotation-page {
-    0% {
-        transform: rotateY(0deg);
-    }
-    100% {
-        transform: rotateY(-180deg)translateZ(-10px);
-    }
-}
-
-.sketchbook .sketch > div .page-1{
-    right: 0;
-    background-size: 200% 100%;
-    background-position: 0%;
-}
-
-.sketch > div .page-2{
-    right: 0;
-    background-size: 200% 100%;
-    background-position: 100%;
-}
-
-
-
-
-@keyframes rotation-sketch {
-    0% {
-      transform: rotate(0deg);
-      width: 80vw;
-    }
-    25% {
-        width: 90vh;
-    }
-    50% {
-        transform: rotate(180deg);
-        width: 80vw;
-    }
-    75% {
-        width: 90vh;
-    }
-    100% {
-        transform: rotate(360deg);
-        width: 80vw;
-    }
-} */
 
 /* Slider */
 .sketchbook .slidecontainer {
@@ -405,6 +304,23 @@ cursor: pointer;
     background-color: inherit;
     border: none;
     z-index: 100;
+}
+
+.sketchbook .next{
+    border: 5px blue solid;
+    animation: border 1s infinite linear  alternate-reverse;
+}
+
+
+
+@keyframes border {
+    0% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .sketchbook .previous{
