@@ -113,4 +113,28 @@ function Sketchbook(){
 
 }
 
-Sketchbook()    
+Sketchbook() ;
+
+// header color
+
+function MouseCircle(){
+    const $ = document.querySelector.bind(document)  
+    let circle = $('.circle');
+    $('header').addEventListener('mousemove', function(e) {
+        left = e.offsetX;
+        top = e.offsetY;
+        circle.style.left = e.pageX + 'px';
+        circle.style.top = e.pageY + 'px';
+    });
+    window.addEventListener('scroll', function(e) {
+        if(window.scrollY > 0){
+            circle.classList.add("hide");
+        }
+        else{
+            circle.classList.remove("hide");
+        }
+      });
+
+}
+
+MouseCircle() ;

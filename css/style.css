@@ -14,6 +14,8 @@ header {
     height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
+    background-image: url(../img/white.png);
+
 }
 
 header .header-img {
@@ -22,10 +24,12 @@ header .header-img {
 }
 
 header h1{
+   display: none;
+}
+
+img.signature{
     width: 100%;
     align-self: center;
-    font-size: 40px;
-
 }
 
 /* Menu */
@@ -56,7 +60,7 @@ header nav{
     display: none;
 }
 
-nav a {
+header nav a {
     width: fit-content;
 }
 
@@ -75,7 +79,7 @@ nav a {
     position: absolute;
 }
 
-.menu-active h1{
+.menu-active .signature{
     display: none;
 }
 
@@ -95,7 +99,7 @@ nav a {
 }
 
 /* Hover images */
-.money {
+header .money {
     position: absolute;
     width: 20%;
     left: 35%;
@@ -103,7 +107,7 @@ nav a {
     display: none;
 }
 
-.active-1 .money{
+header .active-1 .money{
     display: block;
     animation: rotation 4s infinite linear;
 }
@@ -117,6 +121,48 @@ nav a {
     }
     100% {
         transform: rotate(0deg);
+      }
+}
+
+
+/* circle color */
+header .circle{
+    position:fixed;
+    transform:translate(-50%,-50%);
+    height:30vw;
+    width:30vw;
+    border-radius:50%;
+    left: -50%;
+    background-color: red;
+    mix-blend-mode: color;
+    background-blend-mode: revert;
+    animation: circleColor 20s infinite linear;
+    pointer-events: none
+  }
+
+  header .hide{
+    display: none;
+  }
+
+  
+@keyframes circleColor {
+    0% {
+        background-color: red;
+    }
+    20% {
+        background-color: blue;
+      }
+      40% {
+        background-color: green;
+      }
+      60% {
+        background-color: yellow;
+      }
+      80% {
+        background-color: orange;
+      }
+      100% {
+        background-color: red;
       }
 }
 
@@ -188,55 +234,55 @@ nav a {
 
 
 .sketchbook .sketch > div:nth-child(1){
-    background-image: url(../img/sketch-cover.jpg);
+    background-image: url(../img/sketch/sketch-cover.jpg);
     transform: translateZ(-1px);
     border-left: 5px solid #252525;
 }
 
 
 .sketchbook .sketch > div:nth-child(1):after{
-    background-image: url(../img/sketch-1.jpg);
+    background-image: url(../img/sketch/sketch-1.jpg);
     transform: translateZ(-2px);
 }
 
 
 .sketchbook .sketch > div:nth-child(2){
-    background-image: url(../img/sketch-2.jpg);
+    background-image: url(../img/sketch/sketch-2.jpg);
     transform: translateZ(-2px);
 }
 
 
 .sketchbook .sketch > div:nth-child(2) > div{
-    background-image: url(../img/sketch-3.jpg);
+    background-image: url(../img/sketch/sketch-3.jpg);
     transform: translateZ(-3px);
 }
 
 .sketchbook .sketch > div:nth-child(3){
-    background-image: url(../img/sketch-4.jpg);
+    background-image: url(../img/sketch/sketch-4.jpg);
     transform: translateZ(-3px);
 }
 
 
 .sketchbook .sketch > div:nth-child(3) > div{
-    background-image: url(../img/sketch-5.jpg);
+    background-image: url(../img/sketch/sketch-5.jpg);
     transform: translateZ(-4px);
 }
 
 .sketchbook .sketch > div:nth-child(4){
-    background-image: url(../img/sketch-5.jpg);
+    background-image: url(../img/sketch/sketch-5.jpg);
     transform: translateZ(-4px);
 }
 
 
 .sketchbook .sketch > div:nth-child(4) > div{
-    background-image: url(../img/sketch-5.jpg);
-    transform: translateZ(-4px);
+    background-image: url(../img/sketch/sketch-5.jpg);
+    transform: translateZ(-5px);
 }
 
 
 .sketchbook .sketch > div:nth-child(5){
-    background-image: url(../img/sketch-5.jpg);
-    transform: translateZ(-4px);
+    background-image: url(../img/sketch/sketch-5.jpg);
+    transform: translateZ(-5px);
 }
 
 body .rotate{
@@ -348,3 +394,48 @@ cursor: pointer;
 
 /* ---------------------------------------------------------------------------- */
 /* End sketchbook */
+
+
+
+/* ---------------------------------------------------------------------------- */
+/* Art */
+
+.art article{
+    height: 100vh;
+    position: relative;
+}
+
+.art article img,.art article h2 {
+    position: absolute;
+}
+
+
+/* art 1 */
+.art-1 img{
+    width: 80%;
+    right: 0;
+    top: 20%;
+}
+
+.art-1 h2 {
+    left: 10%;
+    top: 50%;
+}
+
+
+/* art 2 */
+.art-2 img{
+    width: 40%;
+    left: 50%;
+    bottom: 0%;
+}
+
+.art-2 h2 {
+    left: 10%;
+    top: 50%;
+}
+
+
+
+/* ---------------------------------------------------------------------------- */
+/* End art */
