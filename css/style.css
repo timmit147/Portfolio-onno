@@ -166,6 +166,29 @@ header .circle{
       }
 }
 
+@media only screen and (max-width: 600px) {
+    header{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    header .header-img{
+        height: 70%;
+        object-fit: contain;
+        object-position: left bottom;
+    }
+    img.signature{
+        padding: 10px;
+        max-height: 20%;
+        align-self: baseline;
+        object-fit: contain;
+        object-position: left;
+    }
+    .menu-active nav{
+        font-size: 20px;
+        align-self: baseline;
+    }
+  }
+
 
 /* ---------------------------------------------------------------------------- */
 /* End header */
@@ -191,7 +214,7 @@ header .circle{
     width: 80%;
     aspect-ratio: 3/2;
     transform-style: preserve-3d;
-    transform: rotateZ(0deg) rotateX(40deg);
+    /* transform: rotateZ(0deg) rotateX(40deg); */
 }
 
 .sketchbook .sketch > div{
