@@ -181,6 +181,33 @@ header .circle{
       }
 }
 
+@media only screen and (max-width: 1200px) {
+    header{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    header .header-img{
+        height: 70%;
+        object-fit: contain;
+        object-position: left bottom;
+    }
+    .signature{
+        position: absolute;
+        left: 2%;
+        top: 4%;
+        transform: none;
+        width: 90%;
+        height: 30vh;
+        background-position: left;
+    
+    }
+    .menu-active nav{
+        font-size: 20px;
+        align-self: baseline;
+    }
+
+}
+
 /* ---------------------------------------------------------------------------- */
 /* End header */
 
@@ -414,95 +441,47 @@ cursor: pointer;
 /* ---------------------------------------------------------------------------- */
 /* Art */
 
-.art article{
-    height: 100vh;
-    position: relative;
+
+#wall article {
+    display: grid;
+    width: 100vw;
+    max-width:100%;
 }
 
-.art article img,.art article h2 {
-    position: absolute;
-}
-
-
-/* expo 1 */
-#expo-1 .art{
-    width: 40%;
-    right: 10%;
-    top: 20%;
-}
-
-#expo-1 .text {
-    left: 1%;
-    top: 10%;
-    width: 40%;
-    background: white;
-    z-index: 1;
+#wall article *{
+    width: 100%;
 }
 
 
-/* expo 2 */
-#expo-2{
-    height: 60vh;
+@media only screen and (min-width: 800px) {
+    #wall article{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* expo-1 */
+    #expo-1 .text{
+        width: 70%;
+        padding-right: 30%;
+        filter: hue-rotate(22deg);
+    }
+
+    #expo-1 .art {
+        width: 80%;
+    }
+
+    /* expo-2 */
+    #expo-2 .art {
+        width: 30%;
+        padding-left: 10%;
+    }
+
+    #wall #expo-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    
+
 }
-
-#expo-2 .art{
-    height: 70%;
-    left: 10%;
-}
-
-#expo-2 .text {
-    left: 30%;
-    top: 10%;
-    width: 25%;
-}
-
-
-/* expo 3 */
-#expo-3 .art{
-    width: 42vw;
-    left: 5%;
-}
-
-#expo-3 .art-2{
-    width: 42vw;
-    right: 5%;
-}
-
-
-#expo-3 .text {
-    left: 1%;
-    top: 10%;
-    width: 40%;
-}
-
-
-/* expo 4 */
-#expo-4 .art{
-    width: 40%;
-    right: 10%;
-    top: 20%;
-}
-
-#expo-4 .text {
-    left: 1%;
-    top: 10%;
-    width: 40%;
-}
-
-
-/* expo 5 */
-#expo-5 .art{
-    width: 50%;
-    left: 10%;
-    top: 0%;
-}
-
-#expo-5 .text {
-    right: 1%;
-    top: 10%;
-    width: 40%;
-}
-
 
 
 
@@ -513,44 +492,7 @@ cursor: pointer;
 
 
 
-@media only screen and (max-width: 1200px) {
-    header{
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    header .header-img{
-        height: 70%;
-        object-fit: contain;
-        object-position: left bottom;
-    }
-    .signature{
-        position: absolute;
-        left: 2%;
-        top: 4%;
-        transform: none;
-        width: 90%;
-        height: 30vh;
-        background-position: left;
-    
-    }
-    .menu-active nav{
-        font-size: 20px;
-        align-self: baseline;
-    }
 
-    /* expo 1 */
-    
-#expo-1 .art{
-    width: 80%;
-    height: auto;
-    right: 10%;
-    top: 45vh;
-}
 
-#expo-1 .text {
-    left: 15%;
-    top: 5%;
-    width: 80%;
-}
 
-}
+
