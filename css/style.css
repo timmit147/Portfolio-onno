@@ -460,9 +460,9 @@ cursor: pointer;
     
     /* expo-1 */
     #expo-1 .text{
-        width: 70%;
-        padding-right: 30%;
-        filter: hue-rotate(22deg);
+        width: 59%;
+        padding-left: 11%;
+        margin-top: 8%;
     }
 
     #expo-1 .art {
@@ -470,16 +470,80 @@ cursor: pointer;
     }
 
     /* expo-2 */
-    #expo-2 .art {
-        width: 30%;
-        padding-left: 10%;
+    article#expo-2 div{
+        width: 100%;
     }
+
+    #expo-2 img.text2 {
+        width: 23%;
+        position: absolute;
+        left: 30%;
+        margin-top: 6%;
+    }
+
+    #expo-2 .art {
+        width: 50%;
+        margin-top: -35%;
+        padding-left: 10%;
+        padding-bottom: 12%;
+    }
+
+    #expo-2 .text {
+        width: 53%;
+        margin-left: 37%;
+    }
+
+
 
     #wall #expo-3 {
-        grid-template-columns: 1fr 1fr 1fr;
+        display: flex;
+        flex-direction: column;
     }
 
+    article#expo-3 div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        padding: 50px;
+        box-sizing: border-box;
+    }
+
+    article#expo-3 div > *{
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #expo-3 .text {
+        width: 26%;
+        margin-left: 68%;
+        margin-top: -2%;
+    }
     
+    article#expo-4 .art {
+        margin-top: -16%;
+        margin-left: 20%;
+        width: 89%;
+    }
+
+    article#expo-4 .text {
+        width: 51%;
+        margin-left: 7%;
+        margin-top: 24%;
+    }
+
+    #wall article#expo-5{
+        grid-template-columns: 1fr 2fr;
+    }
+
+    article#expo-5 {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    #expo-5 img.art {
+        padding-right: 6%;
+        box-sizing: border-box;
+    }
 
 }
 
