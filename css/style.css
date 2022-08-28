@@ -12,10 +12,7 @@ body {
 /* Header */
 header {
     height: 100vh;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    background-image: url(../img/white.png);
-
+    background-image: url("../img/white.png");
 }
 
 header .header-img {
@@ -27,10 +24,28 @@ header h1{
    display: none;
 }
 
-img.signature{
-    width: 100%;
-    align-self: center;
+.signature{
+    width: 60vw;
+    position: absolute;
+    top: 50%;
+    left: 35vw;
+    transform: translate(0%, -50%);
+    background-image: url("../img/signature.png");
+    height: -webkit-fill-available;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: signature 3s ease-in;
 }
+
+@keyframes signature {
+    0%   {background-image: none;}
+    20%   {background-image: url("../img/signature-1.png");}
+    30%   {background-image: url("../img/signature-2.png");}
+    60%   {background-image: url("../img/signature-3.png");}
+    75%   {background-image: url("../img/signature-4.png");}
+    90%   {background-image: url("../img/signature.png");}
+  }
 
 /* Menu */
 header .hamburger-menu{
@@ -165,30 +180,6 @@ header .circle{
         background-color: red;
       }
 }
-
-@media only screen and (max-width: 600px) {
-    header{
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    header .header-img{
-        height: 70%;
-        object-fit: contain;
-        object-position: left bottom;
-    }
-    img.signature{
-        padding: 10px;
-        max-height: 20%;
-        align-self: baseline;
-        object-fit: contain;
-        object-position: left;
-    }
-    .menu-active nav{
-        font-size: 20px;
-        align-self: baseline;
-    }
-  }
-
 
 /* ---------------------------------------------------------------------------- */
 /* End header */
@@ -433,32 +424,133 @@ cursor: pointer;
 }
 
 
-/* art 1 */
-.art-1 img{
-    width: 80%;
-    right: 0;
+/* expo 1 */
+#expo-1 .art{
+    width: 40%;
+    right: 10%;
     top: 20%;
 }
 
-.art-1 h2 {
-    left: 10%;
-    top: 50%;
-}
-
-
-/* art 2 */
-.art-2 img{
+#expo-1 .text {
+    left: 1%;
+    top: 10%;
     width: 40%;
-    left: 50%;
-    bottom: 0%;
+    background: white;
+    z-index: 1;
 }
 
-.art-2 h2 {
-    left: 10%;
-    top: 50%;
+
+/* expo 2 */
+#expo-2{
+    height: 60vh;
 }
+
+#expo-2 .art{
+    height: 70%;
+    left: 10%;
+}
+
+#expo-2 .text {
+    left: 30%;
+    top: 10%;
+    width: 25%;
+}
+
+
+/* expo 3 */
+#expo-3 .art{
+    width: 42vw;
+    left: 5%;
+}
+
+#expo-3 .art-2{
+    width: 42vw;
+    right: 5%;
+}
+
+
+#expo-3 .text {
+    left: 1%;
+    top: 10%;
+    width: 40%;
+}
+
+
+/* expo 4 */
+#expo-4 .art{
+    width: 40%;
+    right: 10%;
+    top: 20%;
+}
+
+#expo-4 .text {
+    left: 1%;
+    top: 10%;
+    width: 40%;
+}
+
+
+/* expo 5 */
+#expo-5 .art{
+    width: 50%;
+    left: 10%;
+    top: 0%;
+}
+
+#expo-5 .text {
+    right: 1%;
+    top: 10%;
+    width: 40%;
+}
+
 
 
 
 /* ---------------------------------------------------------------------------- */
 /* End art */
+
+
+
+
+
+@media only screen and (max-width: 1200px) {
+    header{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    header .header-img{
+        height: 70%;
+        object-fit: contain;
+        object-position: left bottom;
+    }
+    .signature{
+        position: absolute;
+        left: 2%;
+        top: 4%;
+        transform: none;
+        width: 90%;
+        height: 30vh;
+        background-position: left;
+    
+    }
+    .menu-active nav{
+        font-size: 20px;
+        align-self: baseline;
+    }
+
+    /* expo 1 */
+    
+#expo-1 .art{
+    width: 80%;
+    height: auto;
+    right: 10%;
+    top: 45vh;
+}
+
+#expo-1 .text {
+    left: 15%;
+    top: 5%;
+    width: 80%;
+}
+
+}

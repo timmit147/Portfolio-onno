@@ -1,27 +1,27 @@
-// Hamburger menu
-function menu(){
-    const $ = document.querySelector.bind(document)
+// // Hamburger menu
+// function menu(){
+//     const $ = document.querySelector.bind(document)
 
-    $(".hamburger-menu").onclick = function(){
-        $("header").classList.toggle("menu-active");
-    };
+//     $(".hamburger-menu").onclick = function(){
+//         $("header").classList.toggle("menu-active");
+//     };
 
-    let nav = document.querySelectorAll('header nav a');
-    let i = 1;
-    for (const a of nav) {
-        const item = i;
-        a.onmouseenter = function(){
-            $("header").classList.add(`active-${item}`);
-        };
+//     let nav = document.querySelectorAll('header nav a');
+//     let i = 1;
+//     for (const a of nav) {
+//         const item = i;
+//         a.onmouseenter = function(){
+//             $("header").classList.add(`active-${item}`);
+//         };
         
-        a.onmouseleave = function(){
-            $("header").classList.remove(`active-${item}`);
-        };
-        i++;
-      }
-}
+//         a.onmouseleave = function(){
+//             $("header").classList.remove(`active-${item}`);
+//         };
+//         i++;
+//       }
+// }
 
-menu()
+// menu()
 
 
 // Sketchbook
@@ -41,7 +41,6 @@ function Sketchbook(){
     $(".next").onclick = function(){
         if(i == -1){
             $(`.next`).style.border = "unset";
-            console.log("test");
         }
         if(i < 6){
             i=i+2;
@@ -68,33 +67,39 @@ function Sketchbook(){
       });
       
       $(".sketchbook").addEventListener('mousemove', e => {
+        console.log(e.offsetX);
         if(isDrawing == true){
-            x = e.offsetX;
-            y = e.offsetY;
+
             
-            console.log(xRotate);
-            xRotate =  ((yStart - y)/5) + xRotate;
-
-            if(xRotate < 0 ){
-                xRotate = 0;
-            }
-            if(xRotate > 90){
-                xRotate = 90;
-            }
 
 
-            zRotate = ((xStart - x)/5) + zRotate;
+            // x = e.offsetX;
+            // y = e.offsetY;
             
-            if(zRotate < 0){
-                zRotate = 0;
-            }
-            if(zRotate > 90){
-                zRotate = 90;
-            }
+            // xRotate =  ((yStart - y)/5) + xRotate;
+
+            // if(xRotate < 0 ){
+            //     xRotate = 0;
+            // }
+            // if(xRotate > 90){
+            //     xRotate = 90;
+            // }
+
+
+            // zRotate = ((xStart - x)/5) + zRotate;
+            
+            // if(zRotate < 0){
+            //     zRotate = 0;
+            // }
+            // if(zRotate > 90){
+            //     zRotate = 90;
+            // }
 
 
 
-            $(".sketch").style.transform = `rotateZ(${zRotate}deg)rotateX(${xRotate}deg)`;
+            // // $(".sketch").style.transform = `rotateZ(${zRotate}deg)rotateX(${xRotate}deg)`;
+            // $(".sketch").style.transform = `rotateX(${xRotate}deg)`;
+
         }
         
       });
